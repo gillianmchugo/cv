@@ -1,0 +1,61 @@
+---
+name: Gillian McHugo
+position: "Computational Biologist"
+address: "Dublin, Ireland"
+www: gillianmchugo.github.io
+email: "gillianmchugo@pm.me"
+github: gillianmchugo
+linkedin: gillianmchugo
+orcid: 0000-0001-6920-0041
+date: "`r format(Sys.time(), '%B %Y')`"
+headcolor: 333333
+aboutme: "Computational biology PhD researcher at University College Dublin studying integrative genomics of infectious diseases in cattle."
+output: 
+  vitae::awesomecv:
+  page_total: true
+csl: "publications/apa-custom.csl"
+---
+```{r setup, include = F}
+if (!require(knitr)) install.packages("knitr")
+if (!require(tibble)) install.packages("tibble")
+if (!require(vitae)) install.packages("vitae")
+knitr::opts_chunk$set(echo = F, warning = F, message = F)
+```
+# Education
+```{r education}
+tibble::tribble(~ Degree,
+                ~ Year,
+                ~ Institution,
+                ~ Where,
+                ~ details,
+                "PhD in Infection Biology",
+                "2018 - 2024",
+                "University College Dublin",
+                "Dublin, Ireland",
+                "Thesis: Integrative population and functional genomics of African cattle, first experimental chapter published in \\href{https://doi.org/10.1038/s41437-024-00734-w}{\\textit{Heredity} (doi: 10.1038/s41437-024-00734-w)} and second experimental chapter available as a preprint on \\href{https://doi.org/doi:10.1101/2025.01.31.635858}{bioRxiv (doi: doi:10.1101/2025.01.31.635858)}.",
+                "MSc in Evolutionary Biology",
+                "2015 - 2016",
+                "University College Dublin",
+                "Dublin, Ireland",
+                "Thesis: A population genomic analysis of the endangered Galway sheep breed, published in \\href{https://doi.org/10.3389/fgene.2019.00927}{\\textit{Frontiers in Genetics} (doi: 10.3389/fgene.2019.00927)}.",
+                "BA (Mod) in Natural Sciences (Zoology)",
+                "2011 - 2015",
+                "Trinity College Dublin",
+                "Dublin, Ireland",
+                "Thesis: \\textit{Mytilus edulis} as a bioindicator of water pollution: potential histopathology biomarkers in Dublin Bay and Newquay, Co. Clare.") %>%
+  vitae::detailed_entries(Institution,
+                          Where,
+                          Degree,
+                          Year,
+                          details,
+                          .protect = F)
+```
+# Publications
+\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text}
+```{r publications}
+vitae::bibliography_entries("publications/publications.bib") %>% 
+  vitae::filter(type == "article-journal")
+```
+\footnotesize
+A full list is available at [gillianmchugo.github.io](https://gillianmchugo.github.io) and [orcid.org/0000-0001-6920-0041](https://orcid.org/0000-0001-6920-0041)
+  
