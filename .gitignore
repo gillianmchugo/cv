@@ -1,0 +1,7 @@
+*.Rproj
+*.Rhistory
+.Rproj.user/
+fonts
+awesome-cv.cls
+GillianMcHugoCV.md
+GillianMcHugoCV.log
